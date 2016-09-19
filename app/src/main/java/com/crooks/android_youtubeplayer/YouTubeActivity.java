@@ -12,8 +12,8 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class YouTubeActivity extends YouTubeBaseActivity
         implements YouTubePlayer.OnInitializedListener {
 
-    private String GOOGLE_API_KEY = "TBA";
-    private String YOUTUBE_VIDEO_ID = "TBA";
+    private String GOOGLE_API_KEY = "AIzaSyB411ESm1JElSTAyzJ_OhemMkIu4-aWerc";
+    private String YOUTUBE_VIDEO_ID = "CTAud5O7Qqk";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,13 @@ public class YouTubeActivity extends YouTubeBaseActivity
         @Override
         public void onPlaying() {
 
+            Toast.makeText(YouTubeActivity.this, "Good, video is playing", Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
         public void onPaused() {
-
+            Toast.makeText(YouTubeActivity.this, "Video Paused", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -75,12 +77,12 @@ public class YouTubeActivity extends YouTubeBaseActivity
 
         @Override
         public void onAdStarted() {
-
+            Toast.makeText(YouTubeActivity.this, "Ads suck, right", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onVideoStarted() {
-
+            Toast.makeText(YouTubeActivity.this, "Video has begun", Toast.LENGTH_SHORT).show();
         }
 
         @Override
