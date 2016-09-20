@@ -24,8 +24,6 @@ public class StandAloneActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stand_alone);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         btnPlayVideo = (Button) findViewById(R.id.btnPlayVideo);
         btnPlayPlayList = (Button) findViewById(R.id.btnPlayPlaylist);
