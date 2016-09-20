@@ -9,12 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
+
 public class StandAloneActivity extends AppCompatActivity
         implements View.OnClickListener {
 
     private String GOOGLE_API_KEY = "AIzaSyB411ESm1JElSTAyzJ_OhemMkIu4-aWerc";
     private String YOUTUBE_VIDEO_ID = "CTAud5O7Qqk";
-    private String YOUTUBE_PLAYLIST = "TBA";
+    private String YOUTUBE_PLAYLIST = "PL6B2F0638282B3207";
     private Button btnPlayVideo;
     private Button btnPlayPlayList;
 
@@ -38,7 +40,20 @@ public class StandAloneActivity extends AppCompatActivity
     public void onClick(View v) {
         Intent intent = null;
         switch(v.getId()){
+            case R.id.btnPlayVideo:
+                intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, YOUTUBE_VIDEO_ID);
+                break;
 
+            case R.id.btnPlayPlaylist:
+                intent = YouTubeStandalonePlayer.createPlaylistIntent(this, GOOGLE_API_KEY, YOUTUBE_PLAYLIST);
+                break;
+
+            default:
+
+        }
+
+        if (intent != null){
+            startActivity(intent);
         }
     }
 }
